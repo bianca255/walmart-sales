@@ -1,13 +1,3 @@
-"""
-Task 3 - CRUD + Time-Series Query Endpoints
-Walmart Sales Forecast - group time-series database assignment.
-
-Run:
-    uvicorn main:app --reload
-
-Docs (interactive, auto-generated):
-    http://127.0.0.1:8000/docs
-"""
 from fastapi import FastAPI
 
 from routes_sql import router as sql_router

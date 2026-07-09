@@ -1,6 +1,3 @@
-"""
-MongoDB connection helper for the walmart_sales.sales collection (Task 2 design).
-"""
 import os
 from pymongo import MongoClient
 from dotenv import load_dotenv

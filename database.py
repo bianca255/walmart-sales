@@ -1,5 +1,4 @@
-"""
-MySQL connection helper for the walmart_sales database (Task 2 schema).
+"""MySQL connection helper for the walmart_sales database (Task 2 schema).
 Uses plain pymysql (no ORM) since the schema is fixed and small -
 raw SQL keeps the CRUD logic simple and easy to explain in your report.
 """

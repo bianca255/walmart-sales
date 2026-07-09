@@ -1,5 +1,4 @@
-"""
-CRUD + time-series endpoints for the MySQL `TrainSales` table
+"""CRUD + time-series endpoints for the MySQL `TrainSales` table
 (the fact table in the Task 2 schema: Store, Dept, Date, Weekly_Sales, IsHoliday).
 """
 from datetime import date
@@ -10,11 +9,6 @@ from database import get_connection
 from models_sql import TrainSalesCreate, TrainSalesUpdate, TrainSalesOut
 
 router = APIRouter(prefix="/sql/sales", tags=["MySQL - TrainSales"])
-
-
-# ---------- Required time-series endpoints ----------
-# NOTE: these two routes are declared BEFORE the "/{store}/{dept}/{date}"
-# route below so FastAPI doesn't try to match "latest" as a Store id.
 
 @router.get("/latest", response_model=TrainSalesOut)
 def get_latest_record():
@@ -66,9 +60,6 @@ def get_records_by_date_range(
         return rows
     finally:
         conn.close()
-
-
-# ---------- Standard CRUD ----------
 
 @router.post("", response_model=TrainSalesOut, status_code=201)
 def create_record(record: TrainSalesCreate):
