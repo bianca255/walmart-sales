@@ -4,3 +4,4 @@ pymysql==1.1.1
 pymongo==4.8.0
 python-dotenv==1.0.1
 pydantic==2.9.2
+pandas==2.2.2

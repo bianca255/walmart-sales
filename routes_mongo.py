@@ -1,4 +1,5 @@
-"""CRUD + time-series endpoints for the MongoDB `sales` collection
+"""
+CRUD + time-series endpoints for the MongoDB `sales` collection
 (Task 2 design: merged train/stores/features documents).
 """
 from datetime import datetime, date
@@ -24,6 +25,10 @@ def to_object_id(id_str: str) -> ObjectId:
         return ObjectId(id_str)
     except InvalidId:
         raise HTTPException(status_code=400, detail="Invalid document id")
+
+
+# ---------- Required time-series endpoints ----------
+# Declared before "/{doc_id}" so "latest" isn't matched as an id.
 
 @router.get("/latest")
 def get_latest_record():

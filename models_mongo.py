@@ -5,7 +5,7 @@ from pydantic import BaseModel
 class SalesDocCreate(BaseModel):
     Store: int
     Dept: int
-    Date: str
+    Date: str  # ISO date string, e.g. "2012-01-15"
     Weekly_Sales: float
     IsHoliday_x: bool = False
     Type: Optional[str] = None
